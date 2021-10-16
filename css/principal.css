@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "NFL_RedZone";
+  src: url(../fonts/NFL_RedZone.ttf);
+}
+
+body {
+  background-image: url(/img/timon.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-dark {
+  background-color: #cf0a2c !important;
+}
+
+.navbar-brand {
+  font-family: "NFL_RedZone";
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.menu-principal {
+  height: 90vh;
+}
+
+.datos {
+  height: 40%;
+  padding: 60px 0 0 0;
+  align-content: center;
+}
+
+.botones {
+  height: 60%;
+  align-content: space-evenly;
+}
+
+.boton {
+  height: 14%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}
+
+span,
+a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a {
+  /* text-decoration: underline; */
+  font-weight: 700;
+}
+
+.menu-convocatorias {
+  display: flex;
+  align-items: center;
+  padding: 70px 20px 70px 20px;
+}
+
+.menu-convo {
+  padding: 70px 0 70px 0;
+}
+
+.descargar {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.agr-participante {
+  background-color: #198754;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 1;
+}
+
+.agr-participante:active {
+  opacity: 0.9;
+}
+
+.menu-cronograma {
+  padding: 55px 0;
+}
+
+.avatars {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.carousel-inner {
+  height: 70vh;
+}
+
+.carousel-item img {
+  height: 70vh;
+}
+
+.botonInscripcion {
+  margin-top: 15%;
+}
+
+.botonInscripcion .btnPrincipal {
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.botonInscripcion .btnPrincipal:focus {
+  background-color: rgb(85, 84, 84);
+  box-shadow: 1px 1px 10px 5px rgb(85, 84, 84);
+}
