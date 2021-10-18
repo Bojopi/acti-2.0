@@ -301,14 +301,20 @@
                         </div>
                         <div class="form-group">
                             <label for="">Materia</label>
-                            <input type="text" name="materia" id="materia" autocomplete="off" class="form-control"
+                            <input type="text" list="itemMate" name="materia" id="materia" autocomplete="off" class="form-control"
                                 aria-describedby="helpId" required>
+                            <datalist id="itemMate">
+                                <!-- <option value="1">opcion 1</option> -->
+                            </datalist>
                             <small id="helpId" class="text-muted">Coloque el nombre de la materia</small>
                         </div>
                         <fieldset enable>
                             <div class="form-group">
                                 <label for="">Carrera</label>
-                                <input type="text" name="carrera" id="carrera" class="form-control" required>
+                                <input type="text" list="itemCarre" name="carrera" id="carrera" class="form-control" required>
+                                <datalist id="itemCarre">
+                                    <!-- <option value="1">opcion 1</option> -->
+                                </datalist>
                             </div>
                         </fieldset>
                         <div class="form-group">
