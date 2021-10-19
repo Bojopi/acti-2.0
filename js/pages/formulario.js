@@ -1,5 +1,6 @@
 const clienteAxios = axios.create({
-  baseURL: "https://actividades-api-formativas.herokuapp.com",
+  baseURL: 'http://localhost:8080'
+  // baseURL: "https://actividades-api-formativas.herokuapp.com",
 });
 
 const tokenAuth = (token) => {
@@ -84,24 +85,35 @@ const obtenerUsuarioAutenticado = async () => {
 };
 
 const enviarFormulario = async () => {
+  const fecha = document.getElementById("fecha").value;
+  const responsable = document.getElementById("responsable").value;
+  const semestre = document.getElementById("semestre").value;
+  const modulo = document.getElementById("modulo").value;
+  const area = document.getElementById("area").value;
+  const materia = document.getElementById("materia").value;
+  const carrera = document.getElementById("carrera").value;
+  const tip_actividad = document.getElementById("tip_actividad").value;
+  const desc_actividad = document.getElementById("desc_actividad").value;
+  const archivo = document.getElementById("customFile").value;
   const token = JSON.parse(localStorage.getItem("token"));
   if (token) {
     tokenAuth(token);
   }
   try {
-    const fecha = document.getElementById("fecha").value;
-    // const responsable = document.getElementById("responsable").value;
-    const semestre = document.getElementById("semestre").value;
-    const modulo = document.getElementById("modulo").value;
-    const area = document.getElementById("area").value;
-    const materia = document.getElementById("materia").value;
-    const carrera = document.getElementById("carrera").value;
-    const tip_actividad = document.getElementById("tip_actividad").value;
-    const desc_actividad = document.getElementById("desc_actividad").value;
-    const archivo = document.getElementById("customFile").value;
+    // console.log(fecha)
+    // console.log(responsable)
+    // console.log(semestre)
+    // console.log(modulo)
+    // console.log(area)
+    // console.log(materia)
+    // console.log(carrera)
+    // console.log(tip_actividad)
+    // console.log(desc_actividad)
+    // console.log(archivo)
 
-    const respuesta = await clienteAxios.post('/api/actividad', {
+    const respuesta = await clienteAxios.post("/api/actividad", {
       fecha,
+      responsable,
       semestre,
       modulo,
       area,
@@ -109,10 +121,10 @@ const enviarFormulario = async () => {
       carrera,
       tip_actividad,
       desc_actividad,
-      archivo
+      archivo,
     })
 
-    console.log(respuesta)
+    console.log(respuesta.data)
   } catch (error) {
     console.log(error)
   }
@@ -123,23 +135,23 @@ document.getElementById("envForm").addEventListener("click", (e) => {
     enviarFormulario();
 });
 
-document.getElementById("materia").addEventListener("input", () => {
-  let mat = document.getElementById("materia").value;
-  if (!mat) {
-    return;
-  }
-  buscadorMaterias(mat);
-});
-
-document.getElementById("carrera").addEventListener("input", () => {
-  let car = document.getElementById("carrera").value;
-  if (!car) {
-    return;
-  }
-  buscadorCarreras(car);
-});
 
 window.addEventListener("load", () => {
   obtenerUsuarioAutenticado();
   // buscadorMaterias()
+  document.getElementById("materia").addEventListener("input", () => {
+    let mat = document.getElementById("materia").value;
+    if (!mat) {
+      return;
+    }
+    buscadorMaterias(mat);
+  });
+  
+  document.getElementById("carrera").addEventListener("input", () => {
+    let car = document.getElementById("carrera").value;
+    if (!car) {
+      return;
+    }
+    buscadorCarreras(car);
+  });
 });
