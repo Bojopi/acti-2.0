@@ -94,7 +94,7 @@ const enviarFormulario = async () => {
   const carrera = document.getElementById("carrera").value;
   const tip_actividad = document.getElementById("tip_actividad").value;
   const desc_actividad = document.getElementById("desc_actividad").value;
-  const archivo = document.getElementById("customFile").value;
+  const archivo = document.getElementById("archivo").value;
   const token = JSON.parse(localStorage.getItem("token"));
   if (token) {
     tokenAuth(token);
