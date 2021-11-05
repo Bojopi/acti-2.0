@@ -95,6 +95,10 @@ const enviarFormulario = async () => {
   const tip_actividad = document.getElementById("tip_actividad").value;
   const desc_actividad = document.getElementById("desc_actividad").value;
   const archivo = document.getElementById("archivo").files[0];
+  // const data = new FormData()
+
+  // data.append('archivo', archivo)
+
   const token = JSON.parse(localStorage.getItem("token"));
   if (token) {
     tokenAuth(token);
@@ -109,19 +113,21 @@ const enviarFormulario = async () => {
     // console.log(carrera)
     // console.log(tip_actividad)
     // console.log(desc_actividad)
-    // console.log(archivo)
+    console.log(archivo)
 
     const respuesta = await clienteAxios.post("/api/actividad", {
-      fecha,
-      responsable,
-      semestre,
-      modulo,
-      area,
-      materia,
-      carrera,
-      tip_actividad,
-      desc_actividad,
+      // fecha,
+      // responsable,
+      // semestre,
+      // modulo,
+      // area,
+      // materia,
+      // carrera,
+      // tip_actividad,
+      // desc_actividad,
       archivo,
+      // data,
+      // body: data
     })
 
     console.log(respuesta.data)
