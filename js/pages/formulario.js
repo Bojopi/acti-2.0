@@ -116,15 +116,15 @@ const enviarFormulario = async () => {
     console.log(archivo)
 
     const respuesta = await clienteAxios.post("/api/actividad", {
-      // fecha,
-      // responsable,
-      // semestre,
-      // modulo,
-      // area,
-      // materia,
-      // carrera,
-      // tip_actividad,
-      // desc_actividad,
+      fecha,
+      responsable,
+      semestre,
+      modulo,
+      area,
+      materia,
+      carrera,
+      tip_actividad,
+      desc_actividad,
       archivo,
       // data,
       // body: data
